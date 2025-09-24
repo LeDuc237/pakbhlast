@@ -398,7 +398,7 @@ const ProductPage: React.FC = () => {
                     <span className="text-3xl font-bold text-gray-900">${pricing.packPriceAfterDiscount?.toFixed(2) || pricing.totalPrice.toFixed(2)}</span>
                     {pricing.originalPrice > pricing.basePrice && (
                       <>                   
-                        <span className="text-xl text-gray-400 line-through">${(pricing.originalPrice * selectedPack).toFixed(2)}</span>
+                        <span className="text-xl text-gray-400 line-through">${(pricing.basePrice * selectedPack).toFixed(2)}</span>
                         <div className="bg-red-100 text-red-600 px-3 py-1 rounded-lg font-bold">
                           -{packOptions.find(p => p.count === selectedPack)?.discount || 0}%
                         </div>

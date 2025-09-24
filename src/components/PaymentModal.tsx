@@ -5,6 +5,7 @@ import PostPaymentModal from './PostPaymentModal';
 import PayPalButton from './PayPalButton';
 import { sendOrderNotificationEmail } from '../utils/emailService';
 import { stripePromise } from '../utils/stripeHelpers';
+import CountrySelect from './CountrySelect'; 
 import { createPaymentIntent, confirmStripePayment } from '../utils/paymentService';
 
 interface PaymentModalProps {
@@ -374,17 +375,44 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, total, ite
     alert('PayPal payment failed. Please try again.');
   };
 
+  // Countries list focused on North and South America
   const countries = [
     { code: 'US', name: 'United States' },
     { code: 'CA', name: 'Canada' },
-    { code: 'GB', name: 'United Kingdom' },
-    { code: 'FR', name: 'France' },
-    { code: 'DE', name: 'Germany' },
-    { code: 'AU', name: 'Australia' },
-    { code: 'IT', name: 'Italy' },
-    { code: 'ES', name: 'Spain' },
-    { code: 'NL', name: 'Netherlands' },
-    { code: 'BE', name: 'Belgium' }
+    { code: 'MX', name: 'Mexico' },
+    { code: 'BR', name: 'Brazil' },
+    { code: 'AR', name: 'Argentina' },
+    { code: 'CL', name: 'Chile' },
+    { code: 'CO', name: 'Colombia' },
+    { code: 'PE', name: 'Peru' },
+    { code: 'VE', name: 'Venezuela' },
+    { code: 'EC', name: 'Ecuador' },
+    { code: 'GT', name: 'Guatemala' },
+    { code: 'CU', name: 'Cuba' },
+    { code: 'BO', name: 'Bolivia' },
+    { code: 'DO', name: 'Dominican Republic' },
+    { code: 'HN', name: 'Honduras' },
+    { code: 'PY', name: 'Paraguay' },
+    { code: 'SV', name: 'El Salvador' },
+    { code: 'NI', name: 'Nicaragua' },
+    { code: 'CR', name: 'Costa Rica' },
+    { code: 'PA', name: 'Panama' },
+    { code: 'UY', name: 'Uruguay' },
+    { code: 'JM', name: 'Jamaica' },
+    { code: 'TT', name: 'Trinidad and Tobago' },
+    { code: 'GY', name: 'Guyana' },
+    { code: 'SR', name: 'Suriname' },
+    { code: 'BZ', name: 'Belize' },
+    { code: 'BS', name: 'Bahamas' },
+    { code: 'BB', name: 'Barbados' },
+    { code: 'HT', name: 'Haiti' },
+    { code: 'AW', name: 'Aruba' },
+    { code: 'GD', name: 'Grenada' },
+    { code: 'VC', name: 'Saint Vincent and the Grenadines' },
+    { code: 'LC', name: 'Saint Lucia' },
+    { code: 'KN', name: 'Saint Kitts and Nevis' },
+    { code: 'AG', name: 'Antigua and Barbuda' },
+    { code: 'DM', name: 'Dominica' }
   ];
 
   if (!isOpen) return null;
@@ -499,19 +527,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, total, ite
                     />
                   </div>
                   
-                  <select
-                    name="country"
-                    value={formData.country}
-                    onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    {countries.map((country) => (
-                      <option key={country.code} value={country.code}>
-                        {country.name}
-                      </option>
-                    ))}
-                  </select>
-                  
+                  <CountrySelect
+  value={formData.country}
+  onChange={(value) => handleInputChange({ 
+    target: { name: 'country', value } 
+  } as React.ChangeEvent<HTMLSelectElement>)}
+/>
                   <input
                     type="tel"
                     name="phone"

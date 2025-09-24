@@ -277,8 +277,8 @@ export const lengthOptions = Object.values(lengths).map(length => length.display
 // Pack options with discounts
 export const packOptions = [
   { count: 1, label: "1 Pack", discount: 0, badge: "" },
-  { count: 3, label: "3 Packs (Full Head)", discount: 15, badge: "Popular" },
-  { count: 5, label: "5 Packs (Recommended)", discount: 30, badge: "Best Value" },
+  { count: 3, label: "3 Packs (Full Head)", discount: 10, badge: "Popular" },
+  { count: 5, label: "5 Packs (Recommended)", discount: 20, badge: "Best Value" },
 ];
 
 // Utility functions
