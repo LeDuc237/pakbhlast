@@ -36,7 +36,7 @@ const AboutUs = () => {
               Our Story of Beauty & Excellence
             </h2>
             <p className="font-lato text-lg text-gray-700 mb-6 leading-relaxed">
-              Founded with a passion for helping women feel confident and beautiful, Blen Hairs has become a trusted
+              Founded with a passion for helping women feel confident and beautiful, PAKBH has become a trusted
               name in premium hair extensions. We believe every woman deserves to feel amazing in her own skin.
             </p>
             <p className="font-lato text-gray-600 mb-8 leading-relaxed">

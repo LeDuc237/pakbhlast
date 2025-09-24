@@ -238,7 +238,7 @@ const MainPageContact = () => {
 
             {/* Response Time */}
             <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-4">Quick Response Guarantee</h3>
+              <h3 className="text-xl font-bold mb-4">PAKBH Quick Response Guarantee</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
                   <MessageCircle size={20} />

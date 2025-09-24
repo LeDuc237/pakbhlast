@@ -1,4 +1,4 @@
-# Blen Hairs - Premium Afro Kinky Bulk Hair Extensions
+# PAKBH - Premium Afro Kinky Bulk Hair Extensions
 
 A modern e-commerce website for premium human hair extensions, built with React, TypeScript, and Tailwind CSS.
 
@@ -125,4 +125,4 @@ For customer support, users can:
 
 ## License
 
-This project is proprietary software for Blen Hairs.
+This project is proprietary software for PAKBH.

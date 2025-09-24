@@ -96,7 +96,7 @@ const Header = () => {
             >
               <img
                 src="/logo.png"
-                alt="Premium Afro Kinky Bulk Hair LOGO"
+                alt="PAKBH - Premium Afro Kinky Bulk Hair"
                 className="w-100 h-20 mr-2"
               />
             </div>
