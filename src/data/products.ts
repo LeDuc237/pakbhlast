@@ -88,8 +88,8 @@ const lengths = {
   fourteen: { display: '14"', price: 35 },
   sixteen: { display: '16"', price: 45 },
   eighteen: { display: '18"', price: 50 },
-  twenty: { display: '20"', price: 55 },
-  twentyTwo: { display: '22"', price: 60 }
+  twenty: { display: '20"', price: 55 }
+
 };
 
 // Helper function to generate slug in the format: afro-kinky-{color}-{length}
@@ -138,7 +138,7 @@ const generateProducts = () => {
     })
   );
   products.push(
-    createProduct(colors.naturalBlack, lengths.twentyTwo, {
+    createProduct(colors.naturalBlack, lengths.twenty, {
       rating: 4.8,
       reviews: 98,
       image: "/IMG-20250629-WA0197.jpg",
@@ -157,7 +157,7 @@ const generateProducts = () => {
   );
   
   products.push(
-    createProduct(colors.darkBrown, lengths.fourteen, {
+    createProduct(colors.darkBrown, lengths.sixteen, {
       rating: 4.8,
       reviews: 167,
       image: "/QVR-Affordable-Afro-Kinky-Bulk-Human-Hair-Auburn-Color-For-Braiding-DreadLock.webp",
@@ -177,7 +177,7 @@ const generateProducts = () => {
 
   // Medium Brown products
   products.push(
-    createProduct(colors.mediumBrown, lengths.fourteen, {
+    createProduct(colors.mediumBrown, lengths.sixteen, {
       rating: 4.7,
       reviews: 145,
       image: "/IMG-20250702-WA0001.jpg",
@@ -186,7 +186,7 @@ const generateProducts = () => {
   );
 
   products.push(
-    createProduct(colors.mediumBrown, lengths.sixteen, {
+    createProduct(colors.mediumBrown, lengths.eighteen, {
       rating: 4.7,
       reviews: 145,
       image: "/honey_blonde_afro_kinky_bulk_human_hair_for_dreadlocks_black_women.jpg",
@@ -196,7 +196,7 @@ const generateProducts = () => {
 
   // Reddish Brown products
   products.push(
-    createProduct(colors.reddishBrown, lengths.fourteen, {
+    createProduct(colors.reddishBrown, lengths.sixteen, {
       rating: 4.6,
       reviews: 89,
       image: "/auburn_afro_kinky_hair_extensions_for_4c_hair_textures.jpg",
@@ -229,7 +229,7 @@ const generateProducts = () => {
 
   // Burgundy products
   products.push(
-    createProduct(colors.burgundy, lengths.fourteen, {
+    createProduct(colors.burgundy, lengths.sixteen, {
       rating: 4.5,
       reviews: 84,
       image: "/defined-afro-kinky-hair-extensions-that-mimic-4c-texture.webp",
