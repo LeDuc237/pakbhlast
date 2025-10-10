@@ -201,7 +201,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div>
-            <h3 className="text-3xl font-bold text-white mb-6">Blen Hairs</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">PAKBH</h3>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
               Premium afro kinky bulk hair extensions for natural styling and protective hairstyles. Quality you can
               trust.
@@ -314,7 +314,7 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row  items-center space-y-4 md:space-y-0 border-t border-gray-700 pt-8">
-            <div className="text-lg text-gray-400">© {new Date().getFullYear()} PAKBH. All rights reserved.</div>
+            <div className="text-lg text-gray-400">© {new Date().getFullYear()} PAKBH - Premium Afro Kinky Bulk Hair. All rights reserved.</div>
             
           </div>
         </div>

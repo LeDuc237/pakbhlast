@@ -1,6 +1,6 @@
-import  { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, ShoppingBag, Menu, X, User, Heart, Phone, MapPin } from 'lucide-react';
+import { Search, ShoppingBag, Menu, X, Heart, Phone, MapPin } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import CartModal from './CartModal';
 
@@ -11,6 +11,21 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { itemCount, total } = useCart();
+
+  // Effect to close search bar on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isSearchOpen) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isSearchOpen]);
 
   // Popular searches for afro kinky bulk
   const popularSearches = [
@@ -75,17 +90,16 @@ const Header = () => {
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-    <div 
-  onClick={() => navigate('/')}
-  className="flex-shrink-0 flex items-center cursor-pointer"
->
-  <img
-    src="/logo.png"
-    alt="Premium Afro Kinky Bulk Hair LOGO"
-    className="w-100 h-20 mr-2"
-  />
-  
-</div>
+            <div 
+              onClick={() => navigate('/')}
+              className="flex-shrink-0 flex items-center cursor-pointer"
+            >
+              <img
+                src="/logo.png"
+                alt="PAKBH - Premium Afro Kinky Bulk Hair"
+                className="w-100 h-20 mr-2"
+              />
+            </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex space-x-8">
@@ -148,10 +162,18 @@ const Header = () => {
                   placeholder="Search afro kinky bulk hair by color, length..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                  className="w-full p-3 pl-10 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
                   autoFocus
                 />
                 <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+                
+                {/* Close button (X) */}
+                <button
+                  className="absolute right-3 top-3 text-gray-400 hover:text-black transition-colors"
+                  onClick={() => setIsSearchOpen(false)}
+                >
+                  <X size={20} />
+                </button>
                 
                 {/* Search Suggestions */}
                 {searchQuery && searchSuggestions.length > 0 && (
@@ -221,7 +243,6 @@ const Header = () => {
                 >
                   Contact
                 </button>
-              
               </nav>
             </div>
           )}

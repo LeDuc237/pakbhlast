@@ -279,7 +279,7 @@ const ContactPage = () => {
                 Our Location
               </h2>
               <div className="space-y-2">
-                <p className="text-gray-900 font-semibold">Blen Hairs</p>
+                <p className="text-gray-900 font-semibold">PAKBH - Premium Afro Kinky Bulk Hair</p>
                 <p className="text-gray-600">Montpellier, France</p>
                 <p className="text-gray-600">France</p>
               </div>
